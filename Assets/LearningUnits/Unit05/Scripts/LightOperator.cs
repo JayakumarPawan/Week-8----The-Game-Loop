@@ -15,17 +15,18 @@ public class LightOperator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        isRedCubeDetected = false;
+        isBlueCubeDeteced = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if...
-        pointLight.enabled = true;
+        if(isRedCubeDetected && ! isBlueCubeDeteced)
+            pointLight.enabled = true;
 
-        // else
-        pointLight.enabled = false;
+        else
+            pointLight.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
